@@ -1,3 +1,5 @@
+<button (click)="send(selected.currencies[0].name)">Enviar</button>
+<hr />
 {{ total | percent }} <br/> <br/>
 {{ total | currency: selected.currencies[0].symbol }} <br/> <br/>
 {{ selected.currencies[0].name | uppercase }} <br/> <br/>

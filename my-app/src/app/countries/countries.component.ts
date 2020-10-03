@@ -17,4 +17,12 @@ export class CountriesComponent implements OnInit {
         this.selected = countriesJson[2];
         console.log(this.selected.currencies);
     }
+
+    ngOnInit(): void {}
+
+    send(name: string): void {
+        console.log('Antes...', name);
+        name = this.upperCasePipe.transform(name);
+        console.log('Despues:::', name);
+    }
 }
