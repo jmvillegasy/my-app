@@ -1,3 +1,4 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Country } from '@rw/models';
 import * as countriesJson from './../../assets/countries.json';
@@ -6,6 +7,7 @@ import * as countriesJson from './../../assets/countries.json';
     selector: 'rw-countries',
     templateUrl: './countries.component.html',
     styleUrls: ['./countries.component.scss'],
+    providers: [UpperCasePipe],
 })
 export class CountriesComponent implements OnInit {
     selected: CountQueuingStrategy;
