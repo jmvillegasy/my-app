@@ -14,6 +14,7 @@ export class CountriesComponent implements OnInit {
   countries: Country[];
   birthday = new Date();
   total = 1223456.555551;
+  count = "   ";
   constructor(private upperCasePipe: UpperCasePipe) {
     //console.log(countries[10].capital);
     this.selected = countriesJson[2];
