@@ -1,6 +1,7 @@
-export type CustomerType = 'regular' | 'vip';
+export type CustomerType = 'regular' | 'vip' | 'new' | boolean;
+export type Category = 'entrace' | 'main' | 'dessert';
 
 export interface Customer{
     name:string;
-    status: CustomerType;
+    level: CustomerType;
 }

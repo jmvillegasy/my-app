@@ -3,6 +3,6 @@ Hola {{ name }}
 
 <ul>
     <li *ngFor="let dish of dishes" class="dishes">
-        {{dish}}
+        <rw-dish [dish]="dish"></rw-dish>
     </li>
 </ul>
