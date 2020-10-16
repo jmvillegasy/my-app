@@ -9,6 +9,7 @@ import { DishComponent } from './dish/dish.component';
 import { CountriesComponent } from './countries/countries.component';
 import { FilesizePipe } from './pipes/filesize.pipe';
 import { EmptyPipe } from './pipes/empty.pipe';
+import { NewtextPipe } from './pipes/newtext.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EmptyPipe } from './pipes/empty.pipe';
     DishComponent,
     CountriesComponent,
     FilesizePipe,
-    EmptyPipe
+    EmptyPipe,
+    NewtextPipe
   ],
   imports: [
     BrowserModule,

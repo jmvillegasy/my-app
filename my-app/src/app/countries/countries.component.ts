@@ -16,12 +16,7 @@ export class CountriesComponent implements OnInit {
   total = 1223456.555551;
   count = "   ";
   constructor(private upperCasePipe: UpperCasePipe) {
-    //console.log(countries[10].capital);
     this.selected = countriesJson[2];
-    //this.selected = countriesJson;
-    /*this.selected = this.countries.filter(
-      (country: Country) => (country.name = 'Peru')
-    )[0];*/
     console.log(this.selected.currencies)
   }
 
