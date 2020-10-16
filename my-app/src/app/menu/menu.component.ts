@@ -7,10 +7,11 @@ import { Customer, Dish } from '../interfaces';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  name = 'Juan Villegas';
 
+  name = 'Juan Villegas';
   dish: Dish;
   customer: Customer;
+  selected = '';
 
   dishes: Dish[] = [{
     name: 'Arroz con pollo',
@@ -41,17 +42,6 @@ export class MenuComponent implements OnInit {
     }]
   }];
 
-  /*
-  'Arroz con pollo',
-    'Escabeche de Pollo',
-    'Chanfainita',
-    'Ceviche',
-    'Cau-cau',
-    'Pollo a la Brasa',
-    'Tacu Tacu',
-    'Tallarin Rojo'
-  */
-
   constructor() {
     this.listDishes();
     this.customer = {
@@ -66,6 +56,10 @@ export class MenuComponent implements OnInit {
     this.dishes.forEach((dish, i) => {
       console.log(`${i + 1}: ${dish}`);
     })
+  }
+
+  select(name:string): void{
+    this.selected = name;
   }
 
 }
