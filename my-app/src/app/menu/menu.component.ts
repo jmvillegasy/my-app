@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer, Dish } from '../interfaces';
+import { MenuService } from '../utils/menu.service';
+import * as dishesJson from './../../assets/dishes.json';
 
 @Component({
   selector: 'rw-menu',
@@ -8,46 +10,15 @@ import { Customer, Dish } from '../interfaces';
 })
 export class MenuComponent implements OnInit {
 
-  name = 'Juan Villegas';
+  name = 'Juan V';
   dish: Dish;
   customer: Customer;
   selected = '';
 
-  dishes: Dish[] = [{
-    name: 'Arroz con pollo',
-    ingredients: [{
-      name: 'Pollo', qty: 1
-    },{
-      name: 'Arroz', qty: 2
-    },{
-      name: 'Aderezo', qty: 1
-    }]
-  },{
-    name: 'Chanfainita',
-    ingredients: [{
-      name: 'Tallarin', qty: 1
-    },{
-      name: 'Papa', qty: 2
-    }]
-  },{
-    name: 'Ceviche',
-    ingredients: [{
-      name: 'Pescado', qty: 1
-    },{
-      name: 'Limon', qty: 2
-    },{
-      name: 'Cebolla', qty: 2
-    },{
-      name: 'Aji', qty: 1
-    }]
-  }];
+  dishes: Dish[] = dishesJson.dishes;
 
-  constructor() {
+  constructor(public menuService: MenuService) {
     this.listDishes();
-    this.customer = {
-      name: 'Juan',
-      level: true,
-    }
   }
 
   ngOnInit(): void { }
@@ -58,8 +29,16 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  select(name:string): void{
+  select(name: string): void{
     this.selected = name;
+  }
+
+  send(name: string){
+    const customer: Customer = {
+      name: name,
+      level: "regular"
+    }
+    this.menuService.customer = customer;
   }
 
 }
